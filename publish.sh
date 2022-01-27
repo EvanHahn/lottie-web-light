@@ -20,7 +20,7 @@ cp "$download_dir/package/build/player/lottie_light.js" "$publish_dir/index.js"
 echo "Creating package.json..."
 node -p "JSON.stringify({
   ...require('$this_dir/base_package.json'),
-  version: '0.0.0'
+  version: require('$download_dir/package/package.json').version,
 })" > "$publish_dir/package.json"
 
 echo "Creating license..."
